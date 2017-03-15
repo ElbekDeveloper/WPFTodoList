@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPFTodoList.Dictionaries"
+                    xmlns:viewsmodels="clr-namespace:WPFTodoList.ViewModels">
+    <DataTemplate x:Key="ListItem" DataType="{x:Type viewsmodels:TaskViewModel}">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Left">
+                <CheckBox Command="{Binding CheckedCommand}" />
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right">
+                <TextBlock Text="{Binding Title}"/>
+                <TextBlock Text="{Binding DueDate}"/>
+            </StackPanel>
+        </DockPanel>
+    </DataTemplate>
+
+</ResourceDictionary>

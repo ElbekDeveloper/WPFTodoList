@@ -15,5 +15,9 @@ namespace WPFTodoList
 
         DateTime CreationDate { get; set; }
         DateTime DueDate { get; set; }
+
+        List<ITask> SubTasks { get; set; }
+
+        void AddSubTask(ITask task);
     }
 }

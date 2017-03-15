@@ -4,9 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFTodoList"
+        xmlns:viewsmodels="clr-namespace:WPFTodoList.ViewModels"
+        xmlns:views="clr-namespace:WPFTodoList.Views"
         mc:Ignorable="d"
         Title="To-Do List WPF" Height="350" Width="525">
+    <Window.DataContext>
+        <viewsmodels:TaskListViewModel/>
+    </Window.DataContext>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <views:TaskListView DataContext="{Binding}" Grid.RowSpan="3"/>
+        <views:TaskItemView DataContext="{Binding}" Grid.Column="1" Grid.ColumnSpan="2"
+                            Grid.RowSpan="2"/>
     </Grid>
 </Window>
