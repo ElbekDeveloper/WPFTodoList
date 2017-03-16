@@ -23,8 +23,8 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <views:TaskListView DataContext="{Binding}" Grid.RowSpan="3"/>
-        <views:TaskItemView DataContext="{Binding}" Grid.Column="1" Grid.ColumnSpan="2"
+        <views:TaskListView Padding="5" DataContext="{Binding}" Grid.RowSpan="3"/>
+        <views:TaskItemView Padding="5" DataContext="{Binding}" Grid.Column="1" Grid.ColumnSpan="2"
                             Grid.RowSpan="2"/>
     </Grid>
 </Window>

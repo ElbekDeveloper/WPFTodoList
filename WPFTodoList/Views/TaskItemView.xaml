@@ -8,12 +8,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              Visibility="{Binding SelectionVisible}">
-    
-    <DockPanel DataContext="{Binding SelectedTask}">
-        <ListBox DockPanel.Dock="Left" ItemsSource="{Binding SubTasks}" ItemTemplate="{StaticResource ListItem}">
 
-        </ListBox>
-        <DockPanel DockPanel.Dock="Right">
+    <Grid DataContext="{Binding SelectedTask}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="1" Grid.RowSpan="2">
             <StackPanel DockPanel.Dock="Top">
                 <TextBlock Text="{Binding Title}"/>
                 <TextBlock Text="{Binding Status}"/>
@@ -22,5 +27,8 @@
             </StackPanel>
             <TextBox/>
         </DockPanel>
-    </DockPanel>
+        <ListBox Grid.RowSpan="2" ItemsSource="{Binding SubTasks}" ItemTemplate="{StaticResource ListItem}">
+
+        </ListBox>
+    </Grid>
 </UserControl>

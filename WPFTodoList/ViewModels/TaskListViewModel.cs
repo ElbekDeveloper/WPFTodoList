@@ -46,16 +46,18 @@ namespace WPFTodoList.ViewModels
         private List<ITask> TestTasks()
         {
             var testList = new List<ITask>();
-            testList.Add(new TaskViewModel("Test Task 1", DateTime.Today));
-            testList.Add(new TaskViewModel("Test Task 2", DateTime.Today));
-            testList.Add(new TaskViewModel("Test Task 3", DateTime.Today));
+            testList.Add(new TaskViewModel("Walk Dog", DateTime.Today));
+            testList.Add(new TaskViewModel("Write English Paper", DateTime.Today));
+            testList.Add(new TaskViewModel("PHL Reading pg.27", DateTime.Today));
 
-            var i = 0;
-            foreach (var s in testList)
-            {
-                s.AddSubTask(new TaskViewModel("Sub" + i, DateTime.Today));
-                i++;
-            }
+            testList[1].AddSubTask(new TaskViewModel("Write Thesis", DateTime.Today));
+            testList[1].AddSubTask(new TaskViewModel("Write Response", DateTime.Today));
+            testList[1].AddSubTask(new TaskViewModel("Refactor Paper", DateTime.Today));
+
+            testList[2].AddSubTask(new TaskViewModel("Read & Annotate", DateTime.Now));
+            testList[2].AddSubTask(new TaskViewModel("Review & Summerize", DateTime.Now));
+
+
             return testList;
         }
     }

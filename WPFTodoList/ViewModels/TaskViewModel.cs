@@ -33,7 +33,8 @@ namespace WPFTodoList.ViewModels
         public bool Complete
         {
             get { return _complete; }
-            set { onpropertychanged(ref _complete, value); }
+            set { onpropertychanged(ref _complete, value);
+                OnPropertyChanged("Status"); }
         }
 
         public DateTime CreationDate
@@ -85,7 +86,7 @@ namespace WPFTodoList.ViewModels
 
         public void TaskChecked(object param)
         {
-            Title += "!";
+            Complete = !Complete;
         }
     }
 }
